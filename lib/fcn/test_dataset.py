@@ -230,16 +230,15 @@ def filter_labels(labels, bboxes):
 
 # test a single sample
 def test_sample(sample, network, network_crop):
-
     # construct input
-    image = sample['image_color'].cuda()
+    image = sample['image_color']
     if cfg.INPUT == 'DEPTH' or cfg.INPUT == 'RGBD':
-        depth = sample['depth'].cuda()
+        depth = sample['depth']
     else:
         depth = None
 
     if 'label' in sample:
-        label = sample['label'].cuda()
+        label = sample['label']
     else:
         label = None
 
